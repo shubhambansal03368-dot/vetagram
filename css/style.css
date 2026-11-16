@@ -1,0 +1,2181 @@
+/* ==========================================================================
+   VETAGRAM - MODERN ANDROID SOCIAL CARE HOMEPAGE
+   Theme: AMOLED Pitch Black, White Text & Icons, Rainbow Brand Accent
+   ========================================================================== */
+
+:root {
+  --bg-black: #000000;
+  --bg-surface: #0f0f11;
+  --bg-card: #151518;
+  --bg-card-hover: #1e1e24;
+  --border-subtle: #242429;
+  --border-light: #33333d;
+  
+  --text-white: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  --rainbow-gradient: linear-gradient(135deg, #ff0055 0%, #ff5500 20%, #ffcc00 40%, #00cc66 60%, #00b4d8 80%, #9b5de5 100%);
+  --rainbow-glow: rgba(255, 0, 128, 0.35);
+  --story-ring-gradient: linear-gradient(45deg, #ff0055, #ff5500, #ffcc00, #00d26a, #00b4d8, #9b5de5);
+  
+  --color-like-red: #ff3366;
+  --color-repost-green: #00d26a;
+  --color-save-yellow: #ffcc00;
+  --color-vet-blue: #00b4d8;
+  
+  --font-brand: 'Grand Hotel', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --radius-phone: 48px;
+  
+  --shadow-phone: 0 25px 80px -15px rgba(0, 0, 0, 0.95), 0 0 0 1px #222226, 0 0 40px rgba(255, 0, 128, 0.12);
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  line-height: 1.45;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input, textarea {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a30;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Background Ambient Lighting */
+.ambient-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+}
+.glow-orb-1 {
+  width: 450px;
+  height: 450px;
+  background: #ff007f;
+  top: -100px;
+  left: -100px;
+}
+.glow-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: #00b4d8;
+  bottom: -150px;
+  right: -100px;
+  animation-duration: 16s;
+  animation-delay: -3s;
+}
+.glow-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: #7928ca;
+  top: 40%;
+  left: 60%;
+  animation-duration: 14s;
+  animation-delay: -6s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.08); }
+  100% { transform: translate(-30px, -20px) scale(0.95); }
+}
+
+/* ==========================================================================
+   HOMEPAGE HERO CONTAINER & DESKTOP WRAPPER
+   ========================================================================== */
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Global Header */
+.global-header {
+  width: 100%;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Triangle inside a circle navbar logo */
+.brand-emblem {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #111115;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
+  transition: transform var(--transition-bounce), border-color var(--transition-fast);
+}
+.brand-emblem:hover {
+  transform: scale(1.06);
+  border-color: #ffffff;
+}
+.brand-emblem::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: var(--rainbow-gradient);
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(4px);
+}
+.brand-emblem svg {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  fill: #ffffff;
+}
+
+.brand-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.global-brand-name {
+  font-family: var(--font-brand);
+  font-size: 28px;
+  line-height: 1;
+  background: var(--rainbow-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShimmer 5s ease infinite alternate;
+  letter-spacing: 0.5px;
+}
+
+.brand-tagline {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@keyframes rainbowShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-pill {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-white);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d26a;
+  box-shadow: 0 0 10px #00d26a;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.action-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  background: #141418;
+  color: var(--text-white);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.action-btn:hover {
+  background: #202026;
+  border-color: #555562;
+  transform: translateY(-1px);
+}
+.action-btn.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+.emergency-btn {
+  background: linear-gradient(135deg, #ff0055, #ff3366);
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(255, 0, 85, 0.35);
+}
+.emergency-btn:hover {
+  background: linear-gradient(135deg, #ff1a6c, #ff4d7d);
+  box-shadow: 0 6px 20px rgba(255, 0, 85, 0.5);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MAIN HERO & SHOWCASE SECTION
+   ========================================================================== */
+
+.hero-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 60px;
+}
+
+/* Hero Content Sidebar (Visible on Desktop) */
+.hero-content {
+  flex: 1;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.hero-pill {
+  align-self: flex-start;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.hero-pill .rainbow-sparkle {
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.hero-title span.rainbow {
+  background: var(--rainbow-gradient);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShimmer 4s ease infinite alternate;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.feature-card {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all var(--transition-fast);
+}
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+.feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #1a1a20;
+  border: 1px solid #2e2e38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.feature-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+.feature-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Device Showcase Stage */
+.showcase-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.device-mode-switch {
+  display: flex;
+  gap: 8px;
+  background: #121216;
+  padding: 5px;
+  border-radius: var(--radius-full);
+  border: 1px solid #272730;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.mode-tab {
+  padding: 7px 18px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.mode-tab.active {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+}
+.mode-tab:hover:not(.active) {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   ANDROID PHONE HARDWARE CHASSIS
+   ========================================================================== */
+
+.phone-mockup-frame {
+  width: 412px;
+  height: 860px;
+  background: var(--bg-black);
+  border-radius: var(--radius-phone);
+  position: relative;
+  box-shadow: var(--shadow-phone);
+  border: 10px solid #1a1a1f;
+  outline: 2px solid #2a2a33;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Physical Phone Details */
+.phone-mockup-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 38px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  z-index: 99;
+}
+
+/* Side hardware buttons */
+.phone-power-btn, .phone-volume-btn {
+  position: absolute;
+  background: #25252d;
+  border-radius: 3px;
+  pointer-events: none;
+}
+.phone-volume-btn {
+  left: -14px;
+  top: 180px;
+  width: 4px;
+  height: 90px;
+}
+.phone-power-btn {
+  right: -14px;
+  top: 210px;
+  width: 4px;
+  height: 50px;
+}
+
+/* Fullscreen Mode override */
+.showcase-stage.mode-fullscreen .phone-mockup-frame {
+  width: 100%;
+  max-width: 520px;
+  height: 90vh;
+  border-radius: 28px;
+  border: 2px solid #26262e;
+  outline: none;
+}
+
+/* Camera Punch Hole */
+.phone-punchhole {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 13px;
+  background: #000000;
+  border-radius: 50%;
+  border: 1px solid #1c1c22;
+  z-index: 100;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.2);
+}
+.phone-punchhole::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0d1b2a;
+}
+
+/* ==========================================================================
+   ANDROID 15 STATUS BAR
+   ========================================================================== */
+
+.android-status-bar {
+  height: 38px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-black);
+  color: var(--text-white);
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 90;
+  user-select: none;
+}
+
+.status-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.status-time {
+  font-size: 13px;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+}
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.status-right svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2;
+}
+.status-battery {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   VETAGRAM APP HEADER (INSIDE PHONE)
+   Middle: vetagram in a stylish way (rainbow)
+   Left: plus icon
+   Right: msg icon in shape of heart
+   ========================================================================== */
+
+.app-header {
+  height: 54px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+/* Left: Plus Icon */
+.app-header-left {
+  display: flex;
+  align-items: center;
+  width: 44px;
+}
+.app-header-left .header-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background var(--transition-fast), transform var(--transition-bounce);
+}
+.app-header-left .header-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.08);
+}
+.app-header-left .header-icon-btn:active {
+  transform: scale(0.92);
+}
+.app-header-left svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+/* Middle: Vetagram written in a stylish way in rainbow colour */
+.app-header-middle {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vetagram-logo-text {
+  font-family: var(--font-brand);
+  font-size: 36px;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  background: var(--rainbow-gradient);
+  background-size: 240% 240%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShimmer 4s ease infinite alternate;
+  filter: drop-shadow(0 0 14px var(--rainbow-glow));
+  user-select: none;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: transform var(--transition-bounce);
+}
+.vetagram-logo-text:hover {
+  transform: scale(1.04);
+}
+
+/* Right: Message icon in the shape of a heart */
+.app-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 44px;
+  position: relative;
+}
+.app-header-right .header-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  transition: background var(--transition-fast), transform var(--transition-bounce);
+}
+.app-header-right .header-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.08);
+}
+.app-header-right .header-icon-btn:active {
+  transform: scale(0.92);
+}
+.app-header-right svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+/* Heart message unread badge */
+.msg-badge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: #ff0055;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  box-shadow: 0 2px 6px rgba(255, 0, 85, 0.5);
+  animation: badgePop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes badgePop {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* ==========================================================================
+   APP SCROLLABLE CONTENT AREA
+   ========================================================================== */
+
+.app-screen-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--bg-black);
+  scrollbar-width: none;
+}
+.app-screen-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* View Containers (Home, Reels, Send, Search, Account) */
+.app-tab-view {
+  display: none;
+  animation: fadeInView 0.25s ease-out;
+}
+.app-tab-view.active {
+  display: block;
+}
+@keyframes fadeInView {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   STORIES TRAY
+   "in the below so many circle icon and also username below circle icon"
+   ========================================================================== */
+
+.stories-tray-section {
+  padding: 12px 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #000000;
+}
+
+.stories-carousel {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 0 16px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.stories-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 72px;
+  transition: transform var(--transition-bounce);
+}
+.story-item:active {
+  transform: scale(0.94);
+}
+
+.story-ring {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  padding: 2.5px;
+  background: var(--story-ring-gradient);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+.story-item:hover .story-ring {
+  transform: scale(1.05);
+}
+
+.story-ring.seen {
+  background: #33333d;
+}
+
+.story-avatar-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  overflow: hidden;
+  background: #111115;
+}
+.story-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "Your Story" with plus badge */
+.story-item.your-story .story-ring {
+  background: rgba(255, 255, 255, 0.15);
+}
+.your-story-plus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00b4d8;
+  border: 2px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.your-story-plus svg {
+  width: 12px;
+  height: 12px;
+  color: #ffffff;
+  stroke: #ffffff;
+}
+
+.story-username {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  max-width: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Category Filter Chips Bar */
+.category-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 16px 4px;
+  scrollbar-width: none;
+}
+.category-filter-bar::-webkit-scrollbar {
+  display: none;
+}
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: #141418;
+  border: 1px solid #24242e;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+.filter-chip:hover, .filter-chip.active {
+  background: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* ==========================================================================
+   FEED POST LAYOUT
+   "in left side profile photo in the sideway usermane below photo in square shape 
+    in the below like icon comment icon share icon and repost icon and in right side save icon"
+   ========================================================================== */
+
+.feed-stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-post-card {
+  border-bottom: 8px solid #0d0d10;
+  background: #000000;
+  position: relative;
+}
+
+/* Post Header: Profile photo on left, username sideways */
+.post-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-author-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-avatar-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 1.5px;
+  background: var(--story-ring-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid #000000;
+  object-fit: cover;
+}
+
+.post-author-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-author-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.post-username {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.1px;
+}
+
+.verified-badge {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00b4d8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.verified-badge svg {
+  width: 8px;
+  height: 8px;
+  fill: #ffffff;
+  color: #ffffff;
+}
+
+.post-follow-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #00b4d8;
+  cursor: pointer;
+}
+.post-follow-tag.following {
+  color: var(--text-muted);
+}
+
+.post-location {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.post-more-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+.post-more-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+/* Post Media: Photo in square shape (1:1 ratio) */
+.post-square-photo-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #0a0a0d;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+}
+
+.post-square-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.post-tag-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Big Double Tap Heart Animation */
+.double-tap-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  z-index: 20;
+  filter: drop-shadow(0 0 25px rgba(255, 0, 85, 0.8));
+}
+.double-tap-heart svg {
+  width: 90px;
+  height: 90px;
+  fill: #ff0055;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+}
+.double-tap-heart.animate {
+  animation: heartPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes heartPop {
+  0% { transform: translate(-50%, -50%) scale(0) rotate(-15deg); opacity: 0; }
+  35% { transform: translate(-50%, -50%) scale(1.25) rotate(0deg); opacity: 1; }
+  65% { transform: translate(-50%, -50%) scale(1) rotate(5deg); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(0.6) translateY(-40px); opacity: 0; }
+}
+
+/* Post Action Bar:
+   Left: like, comment, share, repost
+   Right: save
+*/
+.post-action-bar {
+  padding: 10px 16px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action-buttons-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feed-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform var(--transition-bounce), color var(--transition-fast);
+  position: relative;
+}
+.feed-icon-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: #ffffff;
+  stroke-width: 2;
+  fill: none;
+  transition: all var(--transition-fast);
+}
+.feed-icon-btn:active {
+  transform: scale(0.82);
+}
+.feed-icon-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Like Active State */
+.feed-icon-btn.like-btn.liked svg {
+  fill: #ff0055;
+  stroke: #ff0055;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 85, 0.6));
+  animation: heartBump 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes heartBump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* Repost Active State */
+.feed-icon-btn.repost-btn.reposted svg {
+  stroke: var(--color-repost-green);
+  filter: drop-shadow(0 0 8px rgba(0, 210, 106, 0.5));
+  transform: rotate(180deg);
+}
+
+/* Save Active State */
+.feed-icon-btn.save-btn.saved svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Post Details & Typography (Pure White & Subtles) */
+.post-details {
+  padding: 0 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.post-likes-count {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.post-caption {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #ffffff;
+}
+.post-caption .caption-author {
+  font-weight: 700;
+  margin-right: 6px;
+}
+.post-caption .caption-tag {
+  color: #00b4d8;
+  font-weight: 500;
+}
+.post-caption .caption-more {
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.post-view-comments-btn {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 2px 0;
+  cursor: pointer;
+}
+.post-view-comments-btn:hover {
+  color: var(--text-secondary);
+}
+
+.post-latest-comment {
+  font-size: 12.5px;
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.post-latest-comment .commentor {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.post-timestamp {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+
+/* Post Quick Comment Input */
+.post-quick-comment {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.post-quick-comment input {
+  flex: 1;
+  font-size: 12.5px;
+  color: #ffffff;
+  placeholder-color: var(--text-muted);
+}
+.post-quick-comment input::placeholder {
+  color: var(--text-muted);
+}
+.quick-emoji-row {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  user-select: none;
+}
+.quick-emoji-btn {
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+.quick-emoji-btn:hover {
+  transform: scale(1.25);
+}
+
+/* ==========================================================================
+   BOTTOM NAVIGATION BAR
+   1. Home shape
+   2. Square inside triangle (Reels)
+   3. Send icon shape like a plane
+   4. Search icon in shape of microscope
+   5. Account icon shape like circle inside person
+   All icons in white colour!
+   ========================================================================== */
+
+.bottom-nav-bar {
+  height: 58px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  position: relative;
+  z-index: 85;
+}
+
+.nav-tab-btn {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #ffffff;
+  transition: transform var(--transition-fast);
+}
+.nav-tab-btn:active {
+  transform: scale(0.85);
+}
+
+.nav-tab-btn svg {
+  width: 25px;
+  height: 25px;
+  color: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 2;
+  transition: all var(--transition-fast);
+}
+
+.nav-tab-btn.active svg {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  transform: scale(1.08);
+}
+.nav-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--rainbow-gradient);
+}
+
+/* Android Bottom Gesture Bar */
+.android-gesture-pill-wrap {
+  height: 16px;
+  background: var(--bg-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  user-select: none;
+}
+.android-gesture-pill {
+  width: 100px;
+  height: 4px;
+  border-radius: 2px;
+  background: #ffffff;
+  opacity: 0.75;
+}
+
+/* ==========================================================================
+   OTHER VIEWS (REELS, SEND CHAT, MICROSCOPE SEARCH, ACCOUNT)
+   ========================================================================== */
+
+/* 1. REELS VIEW (Square-Triangle Icon) */
+.reels-container {
+  height: calc(860px - 38px - 58px - 16px);
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+}
+.reel-video-mockup {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reel-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 40%, rgba(0,0,0,0.85) 100%);
+  pointer-events: none;
+}
+.reel-header-badge {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.reel-sidebar-actions {
+  position: absolute;
+  bottom: 80px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  z-index: 10;
+}
+.reel-action-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.reel-action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: transform var(--transition-bounce);
+}
+.reel-action-btn:active {
+  transform: scale(0.85);
+}
+.reel-action-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.reel-action-unit span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.reel-bottom-info {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  right: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+.reel-user-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.reel-user-tag img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+}
+.reel-user-tag span {
+  font-size: 14px;
+  font-weight: 700;
+}
+.reel-audio-track {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+/* 2. SEND / DIRECT MESSAGES VIEW (Plane Icon) */
+.messages-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.msg-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #141418;
+  border: 1px solid #24242e;
+  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  color: #ffffff;
+}
+.msg-search-box svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+}
+.msg-search-box input {
+  flex: 1;
+  font-size: 13px;
+  color: #ffffff;
+}
+.msg-vets-online {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.online-vets-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+}
+.online-vet-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.online-vet-avatar {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+.online-vet-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #202028;
+}
+.online-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00d26a;
+  border: 2px solid #000000;
+}
+.online-vet-pill span {
+  font-size: 11px;
+  color: #ffffff;
+  max-width: 56px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-threads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.chat-thread-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.chat-thread-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.chat-thread-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-thread-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.chat-thread-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-thread-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.chat-thread-time {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.chat-thread-snippet {
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
+}
+.chat-thread-unread {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff0055;
+}
+
+/* 3. MICROSCOPE SEARCH & TRIAGE VIEW (Microscope Icon) */
+.microscope-search-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.microscope-banner {
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #101018 0%, #161622 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.microscope-banner-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #20202e;
+  border: 1px solid #36364a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+.microscope-banner-icon svg {
+  width: 28px;
+  height: 28px;
+}
+.microscope-banner-text h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.microscope-banner-text p {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.triage-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-full);
+  background: #141419;
+  border: 1px solid #282834;
+}
+.triage-search-bar svg {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+.triage-search-bar input {
+  flex: 1;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.quick-symptom-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.symptom-tag {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: #121216;
+  border: 1px solid #22222a;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.symptom-tag:hover {
+  background: #202028;
+  color: #ffffff;
+  border-color: #444455;
+}
+
+.clinic-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.clinic-card {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: #101015;
+  border: 1px solid #202028;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.clinic-info h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.clinic-info p {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+.clinic-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #00d26a;
+  font-weight: 600;
+}
+.clinic-call-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: #00b4d8;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 4. ACCOUNT / PROFILE VIEW (Circle-Person Icon) */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+.profile-header-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.profile-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  padding: 2.5px;
+  background: var(--rainbow-gradient);
+}
+.profile-avatar-large img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  object-fit: cover;
+}
+.profile-stats-row {
+  display: flex;
+  gap: 20px;
+  text-align: center;
+}
+.profile-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+.profile-stat-box strong {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.profile-stat-box span {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.profile-bio-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.profile-bio-box h3 {
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.profile-badge-pill {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 180, 216, 0.15);
+  color: #00b4d8;
+  font-weight: 700;
+}
+.profile-bio-text {
+  font-size: 12px;
+  color: #e4e4e7;
+  line-height: 1.4;
+}
+.profile-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+.profile-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: #181820;
+  border: 1px solid #282834;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all var(--transition-fast);
+}
+.profile-btn:hover {
+  background: #242430;
+}
+.profile-grid-feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.profile-grid-photo {
+  aspect-ratio: 1 / 1;
+  background: #101014;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.profile-grid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.profile-grid-photo:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   MODALS & DRAWERS (Comments, Story Viewer, Create Post, Chat)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-sheet {
+  width: 100%;
+  max-height: 85%;
+  background: #121218;
+  border-radius: 24px 24px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.modal-backdrop.active .modal-sheet {
+  transform: translateY(0);
+}
+
+.sheet-handle-bar {
+  width: 40px;
+  height: 4px;
+  background: #3f3f4e;
+  border-radius: 2px;
+  margin: 10px auto 4px;
+}
+
+.sheet-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sheet-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.sheet-close-btn {
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.sheet-close-btn:hover {
+  color: #ffffff;
+}
+
+/* Comments Body */
+.comments-list-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.comment-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.comment-bubble {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.comment-user-line {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.comment-time {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.comment-text {
+  font-size: 12.5px;
+  color: #e4e4e7;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.comment-input-area {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0d0d12;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comment-input-area input {
+  flex: 1;
+  font-size: 13px;
+  color: #ffffff;
+}
+.comment-post-btn {
+  font-size: 13px;
+  font-weight: 800;
+  color: #00b4d8;
+  padding: 4px 8px;
+}
+
+/* Story Viewer Modal (Full Screen inside phone) */
+.story-viewer-modal {
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  z-index: 300;
+  display: none;
+  flex-direction: column;
+}
+.story-viewer-modal.active {
+  display: flex;
+}
+.story-progress-bar-wrap {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 4px;
+  z-index: 310;
+}
+.story-progress-track {
+  flex: 1;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.story-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  transition: width 0.1s linear;
+}
+.story-viewer-top {
+  position: absolute;
+  top: 24px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 310;
+}
+.story-viewer-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.story-viewer-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  object-fit: cover;
+}
+.story-viewer-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.story-viewer-time {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.story-viewer-close {
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+}
+.story-media-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.story-media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story-tap-left, .story-tap-right {
+  position: absolute;
+  top: 0;
+  bottom: 80px;
+  width: 40%;
+  z-index: 305;
+}
+.story-tap-left { left: 0; }
+.story-tap-right { right: 0; }
+.story-viewer-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 310;
+}
+.story-reply-box {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 13px;
+}
+.story-reply-box::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+.story-heart-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+.story-heart-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Toast Notifications */
+.vetagram-toast {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(20, 20, 28, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 500;
+  white-space: nowrap;
+}
+.vetagram-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Footer Info Area */
+.global-footer {
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  background: #000000;
+}
+.global-footer strong {
+  background: var(--rainbow-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS (Mobile Device Native View)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 20px 16px 40px;
+    gap: 32px;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-pill {
+    align-self: center;
+  }
+  .feature-cards {
+    width: 100%;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 500px) {
+  .global-header {
+    padding: 12px 16px;
+  }
+  .header-actions .badge-pill,
+  .header-actions .action-btn {
+    display: none;
+  }
+  .hero-section {
+    padding: 0 0 20px;
+  }
+  .hero-content {
+    display: none; /* Focus directly on the mobile app experience */
+  }
+  .device-mode-switch {
+    display: none;
+  }
+  .phone-mockup-frame {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .phone-power-btn, .phone-volume-btn {
+    display: none;
+  }
+}

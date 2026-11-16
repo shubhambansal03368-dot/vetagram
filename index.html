@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Vetagram | Modern Social Care Network for Pets & Vets</title>
+  <meta name="description" content="Vetagram is the world's leading social network connecting pet owners, verified veterinary doctors, emergency animal clinics, and pet lovers.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Google Fonts: Grand Hotel (Stylish Script) + Plus Jakarta Sans (Modern UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects in Deep Space -->
+  <div class="ambient-glow">
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- ====================================================================
+         TOP GLOBAL NAVBAR
+         Requirements:
+         - navbar: triangle inside a circle
+         - Brand name Vetagram in rainbow gradient
+         ==================================================================== -->
+    <header class="global-header">
+      <a href="#" class="brand-section">
+        <!-- Triangle inside a circle navbar logo -->
+        <div class="brand-emblem" title="Vetagram Care Emblem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/>
+            <polygon points="9.5 8 16.5 12 9.5 16" fill="#ffffff" stroke="#ffffff"/>
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="global-brand-name">vetagram</span>
+          <span class="brand-tagline">Pet & Vet Social Care</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <div class="badge-pill">
+          <span class="dot"></span>
+          <span>Android 15 Live Hub</span>
+        </div>
+        <button class="action-btn" id="soundToggleBtn" title="Toggle Sound Feedback">
+          <span id="soundIcon">🔊</span>
+          <span id="soundLabel">Sound On</span>
+        </button>
+        <button class="action-btn emergency-btn" id="emergencyTriageBtn">
+          <span>🚨 24/7 Vet SOS</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         HERO SECTION: VETAGRAM
+         Dual Experience: Desktop Showcase + Interactive Android Phone Homepage
+         ==================================================================== -->
+    <main class="hero-section">
+
+      <!-- Left Hero Sidebar Info (Visible on Desktop) -->
+      <aside class="hero-content">
+        <div class="hero-pill">
+          <span class="rainbow-sparkle">✦ Next-Gen Android Social</span>
+          <span>Certified Veterinary Care</span>
+        </div>
+
+        <h1 class="hero-title">
+          Where Pets, Vets & Care Come Together on <span class="rainbow">Vetagram</span>
+        </h1>
+
+        <p class="hero-description">
+          Experience the flagship dark-mode social network for animal health. Connect with licensed veterinary surgeons, share pet recovery stories, diagnose symptoms with our microscope triage search, and join 2.4M+ animal lovers worldwide.
+        </p>
+
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <!-- Plus symbol -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </div>
+            <h4>Instant Consultation</h4>
+            <p>Post pet health questions directly to board-certified veterinarians.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <!-- Microscope symbol -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 18h8"/>
+                <path d="M3 22h18"/>
+                <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+                <path d="M9 14h2"/>
+                <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+                <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+              </svg>
+            </div>
+            <h4>Microscope Search</h4>
+            <p>AI symptom triage finder & local 24/7 animal emergency map.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <!-- Heart msg symbol -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                <path d="M8 9h4"/>
+                <path d="M8 12h2"/>
+              </svg>
+            </div>
+            <h4>Heart Direct Messages</h4>
+            <p>Encrypted messaging between doctors, clinics, and pet parents.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <!-- Triangle inside circle -->
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="9.5 8 16.5 12 9.5 16" fill="#ffffff"/>
+              </svg>
+            </div>
+            <h4>Android 15 Optimized</h4>
+            <p>Haptic micro-interactions, AMOLED deep black styling, and 60fps feed.</p>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">2.4M+</span>
+            <span class="stat-label">Happy Pets</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">18,500+</span>
+            <span class="stat-label">Licensed Vets</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">99.8%</span>
+            <span class="stat-label">Emergency Help</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center Stage: Android Phone Homepage Showcase -->
+      <div class="showcase-stage" id="showcaseStage">
+
+        <!-- Device Switcher: Android Chassis vs Fullscreen -->
+        <div class="device-mode-switch">
+          <button class="mode-tab active" id="modePhoneBtn">📱 Android Phone</button>
+          <button class="mode-tab" id="modeFullBtn">🖥️ Expanded View</button>
+        </div>
+
+        <!-- ==============================================================
+             ANDROID FLAGSHIP HARDWARE CHASSIS
+             ============================================================== -->
+        <div class="phone-mockup-frame" id="phoneMockupFrame">
+
+          <!-- Hardware volume & power buttons -->
+          <div class="phone-volume-btn"></div>
+          <div class="phone-power-btn"></div>
+
+          <!-- Camera punch-hole cutout -->
+          <div class="phone-punchhole"></div>
+
+          <!-- Android 15 Status Bar -->
+          <div class="android-status-bar">
+            <div class="status-left">
+              <span class="status-time" id="statusClock">09:41</span>
+            </div>
+            <div class="status-right">
+              <!-- 5G icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 20h20"/>
+                <path d="M5 20v-4"/>
+                <path d="M9 20v-8"/>
+                <path d="M13 20v-12"/>
+                <path d="M17 20v-16"/>
+              </svg>
+              <!-- WiFi icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                <line x1="12" y1="20" x2="12.01" y2="20"/>
+              </svg>
+              <!-- Battery 98% -->
+              <div class="status-battery">
+                <span>98%</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2">
+                  <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
+                  <line x1="20" y1="11" x2="20" y2="13"/>
+                  <polygon points="9 9 7 13 11 13 9 17 13 11 9 11 11 9" fill="#ffffff" stroke="none"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               VETAGRAM APP TOP HEADER
+               Requirements:
+               - Middle: "vetagram" written in a stylish way in rainbow colour
+               - Left: Plus icon (+)
+               - Right: Message icon in the shape of a heart
+               - Design: Black background, white icons, rainbow logo
+               ============================================================== -->
+          <nav class="app-header">
+            <!-- Left: Plus icon -->
+            <div class="app-header-left">
+              <button class="header-icon-btn" id="openCreatePostBtn" title="Create New Post or Consult" aria-label="Create Post">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Middle: Vetagram stylish rainbow title -->
+            <div class="app-header-middle">
+              <h1 class="vetagram-logo-text" id="logoText" title="Vetagram Home">vetagram</h1>
+            </div>
+
+            <!-- Right: Message icon in the shape of heart -->
+            <div class="app-header-right">
+              <button class="header-icon-btn" id="openMessagesBtn" title="Direct Messages" aria-label="Direct Messages">
+                <!-- Message icon in the shape of a heart with chat lines -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  <path d="M8 9h4"/>
+                  <path d="M8 12h2"/>
+                </svg>
+                <span class="msg-badge">3</span>
+              </button>
+            </div>
+          </nav>
+
+          <!-- ==============================================================
+               APP SCREEN BODY (SCROLLABLE FEED)
+               ============================================================== -->
+          <div class="app-screen-body" id="appScreenBody">
+
+            <!-- TAB 1: HOME FEED VIEW (Active by default) -->
+            <div class="app-tab-view active" id="tabHomeView">
+
+              <!-- ========================================================
+                   STORIES TRAY
+                   Requirement: "in the below so many circle icon and also username below circle icon"
+                   ======================================================== -->
+              <section class="stories-tray-section" aria-label="Stories">
+                <div class="stories-carousel" id="storiesCarousel">
+
+                  <!-- Story 1: Your Story with plus badge -->
+                  <div class="story-item your-story" data-index="0" data-user="Your Story">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="Your Story Profile">
+                      </div>
+                      <div class="your-story-plus">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+                          <line x1="12" y1="5" x2="12" y2="19"/>
+                          <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <span class="story-username">Your Story</span>
+                  </div>
+
+                  <!-- Story 2: Dr. Oliver (Vet Surgeon) -->
+                  <div class="story-item" data-index="1" data-user="dr.oliver_vet" data-img="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="dr.oliver_vet">
+                      </div>
+                    </div>
+                    <span class="story-username">dr.oliver_vet</span>
+                  </div>
+
+                  <!-- Story 3: Golden Retriever Cooper -->
+                  <div class="story-item" data-index="2" data-user="golden.cooper" data-img="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80" alt="golden.cooper">
+                      </div>
+                    </div>
+                    <span class="story-username">golden.cooper</span>
+                  </div>
+
+                  <!-- Story 4: Wildlife Maya -->
+                  <div class="story-item" data-index="3" data-user="wildlife_maya" data-img="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="wildlife_maya">
+                      </div>
+                    </div>
+                    <span class="story-username">wildlife_maya</span>
+                  </div>
+
+                  <!-- Story 5: Dr. Whiskers Feline Care -->
+                  <div class="story-item" data-index="4" data-user="dr.whiskers" data-img="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="dr.whiskers">
+                      </div>
+                    </div>
+                    <span class="story-username">dr.whiskers</span>
+                  </div>
+
+                  <!-- Story 6: Luna Kitten -->
+                  <div class="story-item" data-index="5" data-user="luna_kitten" data-img="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=200&q=80" alt="luna_kitten">
+                      </div>
+                    </div>
+                    <span class="story-username">luna_kitten</span>
+                  </div>
+
+                  <!-- Story 7: Rescue Rio -->
+                  <div class="story-item" data-index="6" data-user="rescue_rio" data-img="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=200&q=80" alt="rescue_rio">
+                      </div>
+                    </div>
+                    <span class="story-username">rescue_rio</span>
+                  </div>
+
+                  <!-- Story 8: Husky Shadow -->
+                  <div class="story-item" data-index="7" data-user="husky_shadow" data-img="https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?auto=format&fit=crop&w=200&q=80" alt="husky_shadow">
+                      </div>
+                    </div>
+                    <span class="story-username">husky_shadow</span>
+                  </div>
+
+                  <!-- Story 9: Dr. Khalid DVM -->
+                  <div class="story-item" data-index="8" data-user="dr_khalid_dvm" data-img="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80">
+                    <div class="story-ring">
+                      <div class="story-avatar-wrap">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="dr_khalid_dvm">
+                      </div>
+                    </div>
+                    <span class="story-username">dr_khalid_dvm</span>
+                  </div>
+
+                </div>
+              </section>
+
+              <!-- Category Filter Chips -->
+              <div class="category-filter-bar">
+                <button class="filter-chip active">🐾 All Posts</button>
+                <button class="filter-chip">🩺 Surgery & Recovery</button>
+                <button class="filter-chip">🐕 Dogs</button>
+                <button class="filter-chip">🐈 Cats</button>
+                <button class="filter-chip">🦜 Exotic Birds</button>
+                <button class="filter-chip">🚨 Emergency Triage</button>
+              </div>
+
+              <!-- ========================================================
+                   FEED POSTS STREAM
+                   Requirements:
+                   - Left side profile photo
+                   - Sideway username
+                   - Below photo in SQUARE shape (1:1 ratio)
+                   - Below square photo action bar:
+                     - Left: like icon, comment icon, share icon, repost icon
+                     - Right: save icon
+                   - Background black, written words white, icons white
+                   ======================================================== -->
+              <div class="feed-stream" id="feedStream">
+
+                <!-- POST 1: DR. OLIVER & PUPPY BRUNO -->
+                <article class="feed-post-card" id="post-1">
+                  
+                  <!-- Post Header: Profile photo on left, sideways username -->
+                  <header class="post-header">
+                    <div class="post-author-info">
+                      <div class="post-avatar-ring">
+                        <img class="post-avatar-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="dr.oliver_vet">
+                      </div>
+                      <div class="post-author-text">
+                        <div class="post-author-row">
+                          <span class="post-username">dr.oliver_vet</span>
+                          <span class="verified-badge" title="Verified DVM Surgeon">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                          </span>
+                          <span class="post-follow-tag" id="followTag-1">• Follow</span>
+                        </div>
+                        <span class="post-location">Central Animal Medical Center • Surgery Ward</span>
+                      </div>
+                    </div>
+                    <button class="post-more-btn" aria-label="Post Options">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="2"/>
+                        <circle cx="19" cy="12" r="2"/>
+                        <circle cx="5" cy="12" r="2"/>
+                      </svg>
+                    </button>
+                  </header>
+
+                  <!-- Post Media: PHOTO IN SQUARE SHAPE (1:1 Ratio) -->
+                  <div class="post-square-photo-wrap" id="squarePhotoWrap-1" title="Double tap to like">
+                    <img class="post-square-photo" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80" alt="Veterinary doctor with smiling dog Bruno">
+                    <div class="post-tag-badge">
+                      <span>🏷️ Patient: Bruno (Golden Retriever, 6mo)</span>
+                    </div>
+                    <!-- Big double-tap heart pop -->
+                    <div class="double-tap-heart" id="doubleTapHeart-1">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Post Action Bar:
+                       Left: Like icon, Comment icon, Share icon, Repost icon
+                       Right: Save icon -->
+                  <div class="post-action-bar">
+                    <div class="action-buttons-left">
+                      <!-- 1. LIKE ICON (heart shape) -->
+                      <button class="feed-icon-btn like-btn" id="likeBtn-1" title="Like Post" aria-label="Like">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                      </button>
+
+                      <!-- 2. COMMENT ICON (speech bubble shape) -->
+                      <button class="feed-icon-btn comment-btn" id="commentBtn-1" title="Comment" aria-label="Comment">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                      </button>
+
+                      <!-- 3. SHARE ICON (plane / arrow shape) -->
+                      <button class="feed-icon-btn share-btn" id="shareBtn-1" title="Share Post" aria-label="Share">
+                        <svg viewBox="0 0 24 24">
+                          <line x1="22" y1="2" x2="11" y2="13"/>
+                          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                      </button>
+
+                      <!-- 4. REPOST ICON (retweet cycle arrows shape) -->
+                      <button class="feed-icon-btn repost-btn" id="repostBtn-1" title="Repost to Vetagram" aria-label="Repost">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M17 1l4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                          <path d="M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <!-- RIGHT: SAVE ICON (bookmark shape) -->
+                    <div class="action-buttons-right">
+                      <button class="feed-icon-btn save-btn" id="saveBtn-1" title="Save to Collection" aria-label="Save">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Post Details, Likes & Comments (In White Color) -->
+                  <div class="post-details">
+                    <span class="post-likes-count" id="likesCount-1">14,230 likes</span>
+                    
+                    <p class="post-caption">
+                      <span class="caption-author">dr.oliver_vet</span>
+                      Bruno is officially discharged! 🐾❤️ Completed his full orthopaedic recovery in record time. A big reminder to all pet parents: protect active pups from slippery hardwood floors during post-run zoomies! Bruno gets an extra jar of peanut butter today 🦴✨
+                      <span class="caption-tag">#VetLife #VetagramCare #GoldenRetriever #OrthopaedicSurgery</span>
+                    </p>
+
+                    <div class="post-view-comments-btn" id="openCommentsLink-1">
+                      View all 148 comments
+                    </div>
+
+                    <div class="post-latest-comment" id="latestCommentBox-1">
+                      <span class="commentor">golden.cooper</span>
+                      <span>Bruno you are the bravest boy! Happy recovery friend! 🐕🐾</span>
+                    </div>
+
+                    <span class="post-timestamp">18 MINUTES AGO</span>
+
+                    <!-- Quick inline comment row -->
+                    <div class="post-quick-comment">
+                      <input type="text" placeholder="Add a comment for Dr. Oliver..." id="quickCommentInput-1">
+                      <div class="quick-emoji-row">
+                        <span class="quick-emoji-btn">❤️</span>
+                        <span class="quick-emoji-btn">🐾</span>
+                        <span class="quick-emoji-btn">🐶</span>
+                        <span class="quick-emoji-btn">👏</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+
+                <!-- POST 2: DR. WHISKERS & KITTEN DENTAL HEALTH -->
+                <article class="feed-post-card" id="post-2">
+                  
+                  <!-- Post Header: Profile photo on left, sideways username -->
+                  <header class="post-header">
+                    <div class="post-author-info">
+                      <div class="post-avatar-ring">
+                        <img class="post-avatar-img" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="dr.whiskers">
+                      </div>
+                      <div class="post-author-text">
+                        <div class="post-author-row">
+                          <span class="post-username">dr.whiskers</span>
+                          <span class="verified-badge" title="Feline Medicine Specialist">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                          </span>
+                          <span class="post-follow-tag" id="followTag-2">• Follow</span>
+                        </div>
+                        <span class="post-location">All-Cats Wellness Institute</span>
+                      </div>
+                    </div>
+                    <button class="post-more-btn" aria-label="Post Options">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="2"/>
+                        <circle cx="19" cy="12" r="2"/>
+                        <circle cx="5" cy="12" r="2"/>
+                      </svg>
+                    </button>
+                  </header>
+
+                  <!-- Photo in SQUARE shape (1:1 Ratio) -->
+                  <div class="post-square-photo-wrap" id="squarePhotoWrap-2" title="Double tap to like">
+                    <img class="post-square-photo" src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=800&q=80" alt="Veterinarian examining kitten">
+                    <div class="post-tag-badge">
+                      <span>🏷️ Feline Preventive Dentistry</span>
+                    </div>
+                    <div class="double-tap-heart" id="doubleTapHeart-2">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Post Action Bar:
+                       Left: Like, Comment, Share, Repost
+                       Right: Save -->
+                  <div class="post-action-bar">
+                    <div class="action-buttons-left">
+                      <button class="feed-icon-btn like-btn" id="likeBtn-2" title="Like Post" aria-label="Like">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                      </button>
+
+                      <button class="feed-icon-btn comment-btn" id="commentBtn-2" title="Comment" aria-label="Comment">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                      </button>
+
+                      <button class="feed-icon-btn share-btn" id="shareBtn-2" title="Share Post" aria-label="Share">
+                        <svg viewBox="0 0 24 24">
+                          <line x1="22" y1="2" x2="11" y2="13"/>
+                          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                      </button>
+
+                      <button class="feed-icon-btn repost-btn" id="repostBtn-2" title="Repost to Vetagram" aria-label="Repost">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M17 1l4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                          <path d="M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="action-buttons-right">
+                      <button class="feed-icon-btn save-btn" id="saveBtn-2" title="Save to Collection" aria-label="Save">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="post-details">
+                    <span class="post-likes-count" id="likesCount-2">8,914 likes</span>
+                    
+                    <p class="post-caption">
+                      <span class="caption-author">dr.whiskers</span>
+                      Did you know 70% of cats show dental symptoms before age 3? Regular feline checkups and enzyme tooth gels prevent kidney complications later in life! Tiny patient Mochi did wonderfully today 🐱🦷
+                      <span class="caption-tag">#FelineMedicine #CatCare #VetagramVet #PreventiveHealth</span>
+                    </p>
+
+                    <div class="post-view-comments-btn" id="openCommentsLink-2">
+                      View all 92 comments
+                    </div>
+
+                    <span class="post-timestamp">1 HOUR AGO</span>
+                  </div>
+                </article>
+
+
+                <!-- POST 3: WILDLIFE MAYA & RESCUED EXOTIC PARROT -->
+                <article class="feed-post-card" id="post-3">
+                  
+                  <header class="post-header">
+                    <div class="post-author-info">
+                      <div class="post-avatar-ring">
+                        <img class="post-avatar-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="wildlife_maya">
+                      </div>
+                      <div class="post-author-text">
+                        <div class="post-author-row">
+                          <span class="post-username">wildlife_maya</span>
+                          <span class="verified-badge">
+                            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                          </span>
+                          <span class="post-follow-tag">• Follow</span>
+                        </div>
+                        <span class="post-location">Rainforest Wildlife Sanctuary & ICU</span>
+                      </div>
+                    </div>
+                    <button class="post-more-btn" aria-label="Post Options">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="2"/>
+                        <circle cx="19" cy="12" r="2"/>
+                        <circle cx="5" cy="12" r="2"/>
+                      </svg>
+                    </button>
+                  </header>
+
+                  <div class="post-square-photo-wrap" id="squarePhotoWrap-3" title="Double tap to like">
+                    <img class="post-square-photo" src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="Exotic colorful macaw parrot checkup">
+                    <div class="post-tag-badge">
+                      <span>🏷️ Avian Medicine Check</span>
+                    </div>
+                    <div class="double-tap-heart" id="doubleTapHeart-3">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="post-action-bar">
+                    <div class="action-buttons-left">
+                      <button class="feed-icon-btn like-btn" id="likeBtn-3" title="Like Post" aria-label="Like">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                      </button>
+                      <button class="feed-icon-btn comment-btn" id="commentBtn-3" title="Comment" aria-label="Comment">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                      </button>
+                      <button class="feed-icon-btn share-btn" id="shareBtn-3" title="Share Post" aria-label="Share">
+                        <svg viewBox="0 0 24 24">
+                          <line x1="22" y1="2" x2="11" y2="13"/>
+                          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                      </button>
+                      <button class="feed-icon-btn repost-btn" id="repostBtn-3" title="Repost to Vetagram" aria-label="Repost">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M17 1l4 4-4 4"/>
+                          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                          <path d="M7 23l-4-4 4-4"/>
+                          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="action-buttons-right">
+                      <button class="feed-icon-btn save-btn" id="saveBtn-3" title="Save to Collection" aria-label="Save">
+                        <svg viewBox="0 0 24 24">
+                          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="post-details">
+                    <span class="post-likes-count" id="likesCount-3">19,450 likes</span>
+                    <p class="post-caption">
+                      <span class="caption-author">wildlife_maya</span>
+                      Meet Mango the Scarlet Macaw! Recovered from wing injury and feather mites thanks to our avian ICU team. His brilliant colors are shining once again! 🦜🌈
+                      <span class="caption-tag">#AvianVet #WildlifeRescue #ParrotLove</span>
+                    </p>
+                    <span class="post-timestamp">3 HOURS AGO</span>
+                  </div>
+                </article>
+
+              </div>
+            </div>
+
+            <!-- TAB 2: REELS / CLIPS VIEW (Square-Triangle Icon) -->
+            <div class="app-tab-view" id="tabReelsView">
+              <div class="reels-container">
+                <img class="reel-video-mockup" src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80" alt="Vetagram Reel Pet Play">
+                <div class="reel-overlay-gradient"></div>
+
+                <div class="reel-header-badge">
+                  <span>▶️ Vetagram Shorts</span>
+                </div>
+
+                <div class="reel-sidebar-actions">
+                  <div class="reel-action-unit">
+                    <button class="reel-action-btn like-reel-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                      </svg>
+                    </button>
+                    <span>68.2K</span>
+                  </div>
+                  <div class="reel-action-unit">
+                    <button class="reel-action-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                      </svg>
+                    </button>
+                    <span>1,420</span>
+                  </div>
+                  <div class="reel-action-unit">
+                    <button class="reel-action-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                      </svg>
+                    </button>
+                    <span>Share</span>
+                  </div>
+                </div>
+
+                <div class="reel-bottom-info">
+                  <div class="reel-user-tag">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80" alt="golden.cooper">
+                    <span>golden.cooper • Certified Therapy Dog</span>
+                  </div>
+                  <p style="font-size:12.5px; color:#ffffff;">Hospital visit day with pediatric patients! The healing power of wet noses 🐶❤️</p>
+                  <div class="reel-audio-track">
+                    <span>🎵 Original Sound - Therapy Pets of Vetagram</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: DIRECT MESSAGES VIEW (Plane Icon) -->
+            <div class="app-tab-view" id="tabMessagesView">
+              <div class="messages-container">
+                <div class="msg-search-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                  <input type="text" placeholder="Search veterinarians, clinics, or messages...">
+                </div>
+
+                <div class="msg-vets-online">
+                  <span class="section-subtitle">Vets Available Online Now (24/7)</span>
+                  <div class="online-vets-row">
+                    <div class="online-vet-pill">
+                      <div class="online-vet-avatar">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="Dr. Oliver">
+                        <span class="online-dot"></span>
+                      </div>
+                      <span>Dr. Oliver</span>
+                    </div>
+
+                    <div class="online-vet-pill">
+                      <div class="online-vet-avatar">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Whiskers">
+                        <span class="online-dot"></span>
+                      </div>
+                      <span>Dr. Whiskers</span>
+                    </div>
+
+                    <div class="online-vet-pill">
+                      <div class="online-vet-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Dr. Maya">
+                        <span class="online-dot"></span>
+                      </div>
+                      <span>Dr. Maya</span>
+                    </div>
+
+                    <div class="online-vet-pill">
+                      <div class="online-vet-avatar">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Dr. Khalid">
+                        <span class="online-dot"></span>
+                      </div>
+                      <span>Dr. Khalid</span>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="section-subtitle">Direct Consultations</span>
+                <div class="chat-threads-list">
+                  <div class="chat-thread-item" onclick="openChatDialog('Dr. Oliver, DVM', 'Surgery Dept')">
+                    <img class="chat-thread-avatar" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="Dr. Oliver">
+                    <div class="chat-thread-content">
+                      <div class="chat-thread-top">
+                        <span class="chat-thread-name">Dr. Oliver (Surgeon)</span>
+                        <span class="chat-thread-time">2m ago</span>
+                      </div>
+                      <span class="chat-thread-snippet">"Bruno's follow-up x-ray looks clean! Keep him on light walking..."</span>
+                    </div>
+                    <span class="chat-thread-unread"></span>
+                  </div>
+
+                  <div class="chat-thread-item" onclick="openChatDialog('24/7 Animal Poison Control', 'Emergency Hotline')">
+                    <img class="chat-thread-avatar" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=200&q=80" alt="Poison Hotline">
+                    <div class="chat-thread-content">
+                      <div class="chat-thread-top">
+                        <span class="chat-thread-name">🚨 Emergency Triage Desk</span>
+                        <span class="chat-thread-time">1h ago</span>
+                      </div>
+                      <span class="chat-thread-snippet">"Your case #VT-8891 has been marked resolved. Stay safe!"</span>
+                    </div>
+                  </div>
+
+                  <div class="chat-thread-item" onclick="openChatDialog('Dr. Whiskers', 'Feline Nutrition')">
+                    <img class="chat-thread-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Dr. Whiskers">
+                    <div class="chat-thread-content">
+                      <div class="chat-thread-top">
+                        <span class="chat-thread-name">Dr. Whiskers</span>
+                        <span class="chat-thread-time">Yesterday</span>
+                      </div>
+                      <span class="chat-thread-snippet">"Sent over the cat dental hygiene checklist 🐾"</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 4: MICROSCOPE SEARCH & DIAGNOSTIC TRIAGE (Microscope Icon) -->
+            <div class="app-tab-view" id="tabMicroscopeView">
+              <div class="microscope-search-container">
+                <div class="microscope-banner">
+                  <div class="microscope-banner-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 18h8"/>
+                      <path d="M3 22h18"/>
+                      <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+                      <path d="M9 14h2"/>
+                      <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+                      <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+                    </svg>
+                  </div>
+                  <div class="microscope-banner-text">
+                    <h3>Vetagram Microscope Diagnostic</h3>
+                    <p>Instant clinical symptom checker, breed pathology guides & emergency hospital radar.</p>
+                  </div>
+                </div>
+
+                <div class="triage-search-bar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                    <path d="M6 18h8"/>
+                    <path d="M3 22h18"/>
+                    <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+                    <path d="M9 14h2"/>
+                    <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+                    <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+                  </svg>
+                  <input type="text" placeholder="Search pet symptoms: vomiting, limp, rash, fever..." id="microscopeSearchInput">
+                </div>
+
+                <span class="section-subtitle">Common Pet Triage Symptoms</span>
+                <div class="quick-symptom-tags">
+                  <span class="symptom-tag">🐾 Canine Limping</span>
+                  <span class="symptom-tag">🍫 Chocolate Ingestion</span>
+                  <span class="symptom-tag">🐱 Feline Hairball vs Cough</span>
+                  <span class="symptom-tag">👂 Ear Infection Shake</span>
+                  <span class="symptom-tag">👁️ Eye Discharge</span>
+                  <span class="symptom-tag">🦷 Dental Tartar</span>
+                </div>
+
+                <span class="section-subtitle">Nearest 24/7 Emergency Clinics</span>
+                <div class="clinic-cards-list">
+                  <div class="clinic-card">
+                    <div class="clinic-info">
+                      <h4>Metropolitan Vet Emergency Hospital</h4>
+                      <p>Open 24 Hours • 1.2 miles away</p>
+                      <div class="clinic-meta">
+                        <span>★ 4.9 (840 reviews)</span> • <span>ICU On Site</span>
+                      </div>
+                    </div>
+                    <button class="clinic-call-btn" onclick="triggerToast('Calling Metropolitan Vet Emergency Hospital (24/7)...')">Call Now</button>
+                  </div>
+
+                  <div class="clinic-card">
+                    <div class="clinic-info">
+                      <h4>Paws & Claws Specialty Trauma Center</h4>
+                      <p>Open 24 Hours • 2.8 miles away</p>
+                      <div class="clinic-meta">
+                        <span>★ 4.8 (620 reviews)</span> • <span>Surgery Available</span>
+                      </div>
+                    </div>
+                    <button class="clinic-call-btn" onclick="triggerToast('Calling Trauma Center...')">Call Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 5: ACCOUNT PROFILE VIEW (Circle inside Person Icon) -->
+            <div class="app-tab-view" id="tabAccountView">
+              <div class="profile-container">
+                <div class="profile-header-card">
+                  <div class="profile-top-row">
+                    <div class="profile-avatar-large">
+                      <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="Dr. Alex Profile">
+                    </div>
+                    <div class="profile-stats-row">
+                      <div class="profile-stat-box">
+                        <strong>142</strong>
+                        <span>Posts</span>
+                      </div>
+                      <div class="profile-stat-box">
+                        <strong>18.4K</strong>
+                        <span>Followers</span>
+                      </div>
+                      <div class="profile-stat-box">
+                        <strong>420</strong>
+                        <span>Following</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="profile-bio-box">
+                    <h3>
+                      <span>Dr. Alex Rivers, DVM</span>
+                      <span class="profile-badge-pill">Verified Vet</span>
+                    </h3>
+                    <p class="profile-bio-text">
+                      🐾 Chief Medical Officer at Vetagram Care<br>
+                      🩺 Small Animal Orthopaedics & Emergency Trauma<br>
+                      🐶 Pet Dad to Luna & Milo • 24/7 Triage Advocate
+                    </p>
+                  </div>
+
+                  <div class="profile-action-buttons">
+                    <button class="profile-btn" onclick="triggerToast('Profile Settings & Pet Passport Opened')">Edit Pet Passport</button>
+                    <button class="profile-btn" onclick="triggerToast('Medical Consult Calendar Opened')">Schedule Consult</button>
+                  </div>
+                </div>
+
+                <!-- 3x3 Photo Grid -->
+                <div class="profile-grid-feed">
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=400&q=80" alt="Post 1"></div>
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=400&q=80" alt="Post 2"></div>
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=400&q=80" alt="Post 3"></div>
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" alt="Post 4"></div>
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=400&q=80" alt="Post 5"></div>
+                  <div class="profile-grid-photo"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80" alt="Post 6"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ==============================================================
+               BOTTOM NAVIGATION BAR (ANDROID APP)
+               Exact prompt requirements:
+               1. home page icon like home shape
+               2. second icon like a shape inside square triange (square with triangle)
+               3. send icon shape like a plane
+               4. search icon in a shape of microscope
+               5. account icon shape like circle inside person
+               All icons in pure white colour!
+               ============================================================== -->
+          <footer class="bottom-nav-bar" id="bottomNavBar">
+
+            <!-- 1. HOME SHAPE ICON -->
+            <button class="nav-tab-btn active" id="navHomeBtn" title="Home Feed" aria-label="Home">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9.5L12 3l9 6.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.5z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </button>
+
+            <!-- 2. SHAPE INSIDE SQUARE TRIANGLE (Square with play triangle inside) -->
+            <button class="nav-tab-btn" id="navReelsBtn" title="Vetagram Reels" aria-label="Reels">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4"/>
+                <polygon points="10 8 16 12 10 16" fill="#ffffff" stroke="#ffffff"/>
+              </svg>
+            </button>
+
+            <!-- 3. SEND ICON SHAPE LIKE A PLANE (Paper airplane) -->
+            <button class="nav-tab-btn" id="navSendBtn" title="Send / Direct Messages" aria-label="Messages">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+
+            <!-- 4. SEARCH ICON IN A SHAPE OF MICROSCOPE -->
+            <button class="nav-tab-btn" id="navMicroscopeBtn" title="Microscope Triage Search" aria-label="Microscope Search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 18h8"/>
+                <path d="M3 22h18"/>
+                <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+                <path d="M9 14h2"/>
+                <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+                <path d="M12 6V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3"/>
+              </svg>
+            </button>
+
+            <!-- 5. ACCOUNT ICON SHAPE LIKE CIRCLE INSIDE PERSON (Person surrounded by circle) -->
+            <button class="nav-tab-btn" id="navAccountBtn" title="Doctor & Pet Account" aria-label="Account">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" stroke="#ffffff" stroke-width="2"/>
+                <circle cx="12" cy="9" r="3.2" stroke="#ffffff" stroke-width="2"/>
+                <path d="M6.5 18a6.5 6.5 0 0 1 11 0" stroke="#ffffff" stroke-width="2"/>
+              </svg>
+            </button>
+
+          </footer>
+
+          <!-- Android Bottom Gesture Navigation Pill -->
+          <div class="android-gesture-pill-wrap">
+            <div class="android-gesture-pill"></div>
+          </div>
+
+          <!-- ==============================================================
+               FULL SCREEN STORY VIEWER MODAL
+               ============================================================== -->
+          <div class="story-viewer-modal" id="storyViewerModal">
+            <!-- Story Progress Bars at Top -->
+            <div class="story-progress-bar-wrap">
+              <div class="story-progress-track"><div class="story-progress-fill" id="storyProgressFill"></div></div>
+            </div>
+
+            <!-- Story Header (User, Time, Close) -->
+            <div class="story-viewer-top">
+              <div class="story-viewer-user">
+                <img class="story-viewer-avatar" id="storyViewerAvatar" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="Story User">
+                <div>
+                  <span class="story-viewer-name" id="storyViewerName">dr.oliver_vet</span>
+                  <div class="story-viewer-time" id="storyViewerTime">3h ago • Veterinary ICU</div>
+                </div>
+              </div>
+              <button class="story-viewer-close" id="storyViewerCloseBtn">✕</button>
+            </div>
+
+            <!-- Story Media Frame with Left/Right Taps -->
+            <div class="story-media-container">
+              <div class="story-tap-left" id="storyTapLeft"></div>
+              <img id="storyViewerMediaImg" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80" alt="Vetagram Story Media">
+              <div class="story-tap-right" id="storyTapRight"></div>
+            </div>
+
+            <!-- Story Bottom Reply Bar -->
+            <div class="story-viewer-bottom">
+              <input type="text" class="story-reply-box" placeholder="Send message to Dr. Oliver..." id="storyReplyInput">
+              <button class="story-heart-btn" id="storyHeartBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               COMMENTS SLIDE-UP DRAWER
+               ============================================================== -->
+          <div class="modal-backdrop" id="commentsModalBackdrop">
+            <div class="modal-sheet">
+              <div class="sheet-handle-bar"></div>
+              <header class="sheet-header">
+                <h3>Comments & Pet Wishes</h3>
+                <button class="sheet-close-btn" id="commentsCloseBtn">✕</button>
+              </header>
+
+              <div class="comments-list-body" id="commentsListBody">
+                <div class="comment-item">
+                  <img class="comment-avatar" src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80" alt="golden.cooper">
+                  <div class="comment-bubble">
+                    <div class="comment-user-line">
+                      <span>golden.cooper</span>
+                      <span class="comment-time">14m ago</span>
+                    </div>
+                    <p class="comment-text">Bruno you are the bravest boy! Happy recovery friend! 🐕🐾 Sending healing sniffs from New York!</p>
+                  </div>
+                </div>
+
+                <div class="comment-item">
+                  <img class="comment-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="dr.whiskers">
+                  <div class="comment-bubble">
+                    <div class="comment-user-line">
+                      <span>dr.whiskers</span>
+                      <span class="comment-time">10m ago</span>
+                    </div>
+                    <p class="comment-text">Masterful surgical technique Oliver! Bruno’s knee alignment looks 100% restored. Great post-op protocol. 👏</p>
+                  </div>
+                </div>
+
+                <div class="comment-item">
+                  <img class="comment-avatar" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=200&q=80" alt="luna_kitten">
+                  <div class="comment-bubble">
+                    <div class="comment-user-line">
+                      <span>luna_kitten</span>
+                      <span class="comment-time">5m ago</span>
+                    </div>
+                    <p class="comment-text">Big hugs to Bruno! Get well soon sweetheart ❤️🦴</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment-input-area">
+                <input type="text" placeholder="Add a comment as Dr. Alex..." id="modalCommentInput">
+                <button class="comment-post-btn" id="modalCommentPostBtn">Post</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==============================================================
+               CREATE POST MODAL (TRIGGERED BY PLUS ICON)
+               ============================================================== -->
+          <div class="modal-backdrop" id="createPostModalBackdrop">
+            <div class="modal-sheet" style="max-height: 92%;">
+              <div class="sheet-handle-bar"></div>
+              <header class="sheet-header">
+                <h3>New Vetagram Post</h3>
+                <button class="sheet-close-btn" id="createPostCloseBtn">✕</button>
+              </header>
+
+              <div class="comments-list-body" style="gap: 14px;">
+                <div style="font-size: 13px; color: var(--text-secondary);">Select patient photo:</div>
+                <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px;">
+                  <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=200&q=80" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid #00b4d8; cursor: pointer;" class="new-post-photo-choice active">
+                  <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=200&q=80" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid transparent; cursor: pointer;" class="new-post-photo-choice">
+                  <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=200&q=80" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid transparent; cursor: pointer;" class="new-post-photo-choice">
+                  <img src="https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?auto=format&fit=crop&w=200&q=80" style="width: 70px; height: 70px; border-radius: 12px; object-fit: cover; border: 2px solid transparent; cursor: pointer;" class="new-post-photo-choice">
+                </div>
+
+                <div style="font-size: 13px; color: var(--text-secondary);">Write clinical notes or caption:</div>
+                <textarea id="newPostCaptionInput" placeholder="Describe the pet condition, recovery update, or veterinary tips..." style="width: 100%; height: 80px; background: #1c1c24; border: 1px solid #333344; border-radius: 12px; padding: 10px; color: #ffffff; font-size: 13px; resize: none;"></textarea>
+
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  <span class="filter-chip active" style="font-size: 11px;">#RecoveryStory</span>
+                  <span class="filter-chip" style="font-size: 11px;">#VetSurgeon</span>
+                  <span class="filter-chip" style="font-size: 11px;">#PetAdvice</span>
+                </div>
+              </div>
+
+              <div class="comment-input-area" style="justify-content: flex-end;">
+                <button class="action-btn" id="submitCreatePostBtn" style="background: var(--rainbow-gradient); border: none; font-weight: 800; color: #ffffff; padding: 10px 24px;">Share to Feed 🐾</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toast Notification Pill -->
+          <div class="vetagram-toast" id="vetagramToast">
+            <span id="toastIcon">✨</span>
+            <span id="toastMessage">Welcome to Vetagram!</span>
+          </div>
+
+        </div> <!-- End phone-mockup-frame -->
+
+      </div> <!-- End showcase-stage -->
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <p>
+        <strong>vetagram</strong> • The Official Social Care Network for Pets & Veterinary Professionals.
+        <br>Built with AMOLED Pitch Black, Pure White Accents & Vivid Rainbow Brand Spectrum.
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
