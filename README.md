@@ -3,6 +3,9 @@
 > **The #1 Social Care Network for Pets, Vets & Animal Lovers**  
 > Built with AMOLED pitch-black aesthetics, pure white typography & icons, and a vivid animated rainbow brand spectrum.
 
+🌐 **Live Demo on Vercel**: [https://homepage-opal-two.vercel.app](https://homepage-opal-two.vercel.app)  
+📦 **GitHub Repository**: [https://github.com/shubhambansal03368-dot/vetagram](https://github.com/shubhambansal03368-dot/vetagram)
+
 ---
 
 ## 🌟 Highlights & Features
